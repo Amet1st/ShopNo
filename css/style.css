@@ -10,21 +10,47 @@
   transition: all 0.3s linear;
 }
 
+::-webkit-input-placeholder {
+  color: #a8aeb2;
+}
+
+:-ms-input-placeholder {
+  color: #a8aeb2;
+}
+
+::-ms-input-placeholder {
+  color: #a8aeb2;
+}
+
+::placeholder {
+  color: #a8aeb2;
+}
+
+html, body {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 ul, li {
   list-style: none;
   display: inline;
 }
 
 textarea {
+  border: none;
   resize: none;
   outline: none;
 }
 
 input {
+  border: none;
   outline: none;
 }
 
-a {
+a, a:active, a:hover {
+  color: inherit;
   text-decoration: none;
 }
 
@@ -171,6 +197,8 @@ a {
 }
 
 .about__container {
+  padding-bottom: 157px;
+  padding-top: 137px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,7 +213,8 @@ a {
 
 @media screen and (max-width: 940px) {
   .about__container {
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
 
@@ -197,7 +226,6 @@ a {
   font-size: 38px;
   letter-spacing: 2px;
   line-height: 3rem;
-  margin-top: 137px;
 }
 
 @media screen and (max-width: 750px) {
@@ -242,9 +270,10 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 0 25px;
 }
 
-@media screen and (maax-width: 1110px) {
+@media screen and (max-width: 1110px) {
   .about__content {
     -ms-flex-pack: distribute;
         justify-content: space-around;
@@ -267,7 +296,6 @@ a {
 .about__img {
   -webkit-box-shadow: 0px 0px 30px 0px rgba(20, 20, 21, 0.13);
           box-shadow: 0px 0px 30px 0px rgba(20, 20, 21, 0.13);
-  margin-bottom: 157px;
 }
 
 @media screen and (max-width: 940px) {
@@ -280,6 +308,18 @@ a {
 
 .about__great {
   width: 480px;
+}
+
+@media screen and (max-width: 600px) {
+  .about__great {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .about__great {
+    width: 100%;
+  }
 }
 
 .about__advantages--title {
@@ -300,11 +340,23 @@ a {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .about__advantages--title {
+    font-size: 15px;
+  }
+}
+
 .about__advantages--subtitle {
   font-size: 16px;
   font-family: "Raleway";
   color: rgba(0, 0, 0, 0.741);
   line-height: 1.75;
+}
+
+@media screen and (max-width: 600px) {
+  .about__advantages--subtitle {
+    font-size: 10px;
+  }
 }
 
 .about__span {
@@ -316,6 +368,8 @@ a {
 }
 
 .works__container {
+  padding-top: 137px;
+  padding-bottom: 125px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -328,6 +382,12 @@ a {
           align-items: center;
 }
 
+@media screen and (max-width: 940px) {
+  .works__container {
+    padding-top: 50px;
+  }
+}
+
 .works__title {
   font-family: "Montserrat";
   font-weight: bold;
@@ -336,12 +396,17 @@ a {
   font-size: 38px;
   letter-spacing: 2px;
   line-height: 3rem;
-  margin-top: 137px;
 }
 
 @media screen and (max-width: 750px) {
   .works__title {
     font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .works__title {
+    font-size: 20px;
   }
 }
 
@@ -368,6 +433,12 @@ a {
   }
 }
 
+@media screen and (max-width: 560px) {
+  .works__subtitle {
+    font-size: 10px;
+  }
+}
+
 .works__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -377,8 +448,15 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 125px;
   gap: 15px;
+  padding: 0 15px;
+}
+
+@media screen and (max-width: 450px) {
+  .works__content img {
+    width: 70%;
+    height: 70%;
+  }
 }
 
 .team {
@@ -396,6 +474,15 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 98px;
+  padding-bottom: 170px;
+}
+
+@media screen and (max-width: 940px) {
+  .team__container {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
 }
 
 .team__title {
@@ -406,7 +493,6 @@ a {
   font-size: 38px;
   letter-spacing: 2px;
   line-height: 3rem;
-  margin-top: 98px;
 }
 
 @media screen and (max-width: 750px) {
@@ -440,7 +526,6 @@ a {
 
 .team__members {
   width: 100%;
-  margin-bottom: 170px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -460,8 +545,22 @@ a {
   cursor: default;
 }
 
+@media screen and (max-width: 450px) {
+  .team__member {
+    width: 300px;
+    height: 350px;
+  }
+}
+
 .team__member img {
   position: absolute;
+}
+
+@media screen and (max-width: 450px) {
+  .team__member img {
+    width: 70%;
+    height: 70%;
+  }
 }
 
 .team__member:hover .team__about {
@@ -498,6 +597,23 @@ a {
   margin-bottom: 42px;
 }
 
+.team__about--icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  gap: 17px;
+  color: black;
+}
+
+.team__about--icons a:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .team--link {
   margin: 6px;
   font-size: 15px;
@@ -524,98 +640,209 @@ a {
   padding-bottom: 122px;
 }
 
-.contacts-content {
+.contacts__content {
+  padding: 0px 15px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 25px;
+}
+
+@media screen and (max-width: 900px) {
+  .contacts__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 25px;
+  }
 }
 
 .contacts__message {
-  padding: 47px 37px 38px 27px;
-  background-color: rgba(2, 22, 35, 0.71);
-  -webkit-box-shadow: 0px 0px 30px 0px rgba(21, 21, 21, 0.12);
-          box-shadow: 0px 0px 30px 0px rgba(21, 21, 21, 0.12);
-  width: 614px;
+  width: 52%;
+  max-width: 614px;
   height: 460px;
+  background: #021623ab;
+  z-index: 10;
+  padding: 30px;
+}
+
+@media screen and (max-width: 900px) {
+  .contacts__message {
+    width: 70%;
+  }
+}
+
+.contacts__message input, .contacts__message textarea {
+  width: 100%;
+  height: 46px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ffffff;
+  font-size: 15px;
+  color: #ffffff;
+  padding-left: 4px;
+  margin-bottom: 13px;
+}
+
+.contacts__message input::-webkit-input-placeholder, .contacts__message textarea::-webkit-input-placeholder {
+  color: #bbc0c4;
+  font-size: 15px;
+  font-family: "Raleway";
+}
+
+.contacts__message input:-ms-input-placeholder, .contacts__message textarea:-ms-input-placeholder {
+  color: #bbc0c4;
+  font-size: 15px;
+  font-family: "Raleway";
+}
+
+.contacts__message input::-ms-input-placeholder, .contacts__message textarea::-ms-input-placeholder {
+  color: #bbc0c4;
+  font-size: 15px;
+  font-family: "Raleway";
+}
+
+.contacts__message input::placeholder, .contacts__message textarea::placeholder {
+  color: #bbc0c4;
+  font-size: 15px;
+  font-family: "Raleway";
+}
+
+.contacts__message textarea {
+  height: 109px;
+  margin-top: 15px;
 }
 
 .contacts__map {
-  padding: 36px 22px 22px 20px;
+  width: 42%;
+  height: 460px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 36px 22px 16px 20px;
   background-color: rgba(2, 22, 35, 0.71);
   -webkit-box-shadow: 0px 0px 3px 0px rgba(21, 21, 21, 0.16);
           box-shadow: 0px 0px 3px 0px rgba(21, 21, 21, 0.16);
-  width: 500px;
-  height: 461px;
+}
+
+@media screen and (max-width: 900px) {
+  .contacts__map {
+    width: 70%;
+  }
 }
 
 .contacts__input {
+  margin-bottom: 25px;
+  border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
+  width: 100%;
   display: block;
-  border: none;
-  background-color: rgba(2, 22, 35, 0.71);
-  text-decoration: none;
-  margin-bottom: 30px;
-  font-size: 15px;
-  font-family: "Raleway";
-  color: #fff;
-  width: 550px;
+  background: rgba(0, 0, 0, 0);
+  font-family: "Raleway", sans-serif;
+  position: relative;
+}
+
+.contacts__input::-webkit-input-placeholder {
+  position: absolute;
+  top: 17px;
+}
+
+.contacts__input:-ms-input-placeholder {
+  position: absolute;
+  top: 17px;
+}
+
+.contacts__input::-ms-input-placeholder {
+  position: absolute;
+  top: 17px;
+}
+
+.contacts__input::placeholder {
+  position: absolute;
+  top: 17px;
 }
 
 .contacts__text {
-  display: block;
-  border: none;
-  background-color: rgba(2, 22, 35, 0.71);
-  text-decoration: none;
-  font-size: 15px;
-  font-family: "Raleway";
-  color: #fff;
-  padding-bottom: 18px;
-  width: 550px;
+  height: 109px;
+  margin-top: 15px;
+}
+
+.contacts__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .contacts__button {
-  font-size: 18px;
-  font-family: "Montserrat";
-  text-transform: uppercase;
-  font-weight: bold;
-  padding: 15px 37px;
-  border-radius: 2px;
-  border-style: none;
-  background-color: #6eeee4;
   width: 244px;
   height: 53px;
+  border: none;
+  border-radius: 2px;
+  background: #6eeee4;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  margin: 25px 0 0 1px;
 }
 
-.contacts__button:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+@media screen and (max-width: 900px) {
+  .contacts__button {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 100%;
+  }
 }
 
-.contacts__adress {
+@media screen and (max-width: 430px) {
+  .contacts__button {
+    font-size: 12px;
+  }
+}
+
+.contacts__info--item {
   font-size: 15px;
   font-family: "Raleway";
   color: rgba(255, 255, 255, 0.702);
-  line-height: 1.3rem;
-  margin-bottom: 20px;
+  line-height: 1.6rem;
 }
 
-.contacts__email {
+.contacts__email, .contacts a {
+  margin-top: 36px;
+  color: rgba(255, 255, 255, 0.702);
+}
+
+.contacts__email--item, .contacts a--item {
   font-size: 15px;
   font-family: "Raleway";
   color: rgba(255, 255, 255, 0.702);
-  line-height: 1.3rem;
-  margin-bottom: 27px;
+  line-height: 1.6rem;
+}
+
+.contacts__email a:hover, .contacts a a:hover {
+  color: rgba(255, 255, 255, 0.9);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .footer {
@@ -623,8 +850,6 @@ a {
 }
 
 .footer__container {
-  max-width: 1170px;
-  margin: auto;
   padding-top: 93px;
   padding-bottom: 150px;
 }
@@ -649,6 +874,10 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 7px;
 }
 
 .footer__icon {
@@ -661,32 +890,24 @@ a {
   opacity: 0.4;
   width: 46px;
   height: 40px;
-  margin: 3.5px;
   text-align: center;
 }
 
 .footer__icon:hover {
   background-color: #6eeee4;
   color: #070e0d;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
   -webkit-transition: 0.2s;
   transition: 0.2s;
   opacity: 1;
 }
 
-.overlay {
-  opacity: 0;
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 20;
-  -webkit-transition: .3s all;
-  transition: .3s all;
+#map {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 27px;
 }
 
 .open-modal {
