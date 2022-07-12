@@ -1,101 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@300;400;500;600;700;800;900&family=Raleway:wght@200;300;400;500&display=swap");
-@use 'mixins';
-
-
-* {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-size: 16px;
-        scroll-behavior: smooth;
-        transition: all 0.3s linear;
-}
-
-
-::placeholder {
-        color: #a8aeb2;
-}
-
-html, body {
-        margin: 0 auto;
-        width: 100%;
-        height: 100%;
-        position: relative;
-}
-
-ul, li {
-        list-style: none;
-        display: inline;
-}
-
-textarea {
-        border: none;
-        resize: none;
-        outline: none;
-}
-
-input {
-        border: none;
-        outline: none;
-}
-
-a, a:active, a:hover {
-        color: inherit;
-        text-decoration: none;
-}
-
-$bgColorHeader: #eff0f2;
-$bgColorAbout: #f8fafa;
-$bgColorWorks: #fff;
-$bgColorTeam: #f9fbfb;
-$bgColorFooter: #262b2e;
-$decoratedColor: #aae8e4;
-$bgColorContacts: rgba(2, 22, 35, 0.71);
-
-@mixin montserratTitle($fontSize) {
-        font-family: "Montserrat";
-        font-weight: bold;
-        text-transform: uppercase;
-        text-align: center;
-        font-size: $fontSize;
-}
-
-@mixin merriweatherTitle($fontSize) {
-        font-family: "Merriweather", serif;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-align: center;
-        font-size: $fontSize;
-        color: rgba(0, 0, 0, 0.62);
-}
-
-@mixin ralewayText($fontSize) {
-        font-size: 16px;
-        font-family: "Raleway";
-        color: rgba(0, 0, 0, 0.741);
-        line-height: 1.75;
-}
-
-@mixin flexContent {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-}
-
-@mixin mediaFlexContent {
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-}
+@import "mixins";
+@import "colors";
+@import "zeroing";
 
 .container {
         width: 100%;
         max-width: 1170px;
         margin: 0 auto;
+        padding: 0 15px;
 }
 
 .header {
-        width: 100%;
         background-color: $bgColorHeader;
 
         &__container {
@@ -223,7 +138,7 @@ $bgColorContacts: rgba(2, 22, 35, 0.71);
                 letter-spacing: 2px;
                 margin-bottom: 150px;
 
-                @media screen and (max-width: 940px) {
+                @media screen and (max-width: 990px) {
                         margin-bottom: 70px;
                 }
 
@@ -240,19 +155,24 @@ $bgColorContacts: rgba(2, 22, 35, 0.71);
                 @include flexContent();
                 width: 100%;
                 justify-content: space-between;
-                padding: 0 25px;
 
-                @media screen and (max-width: 1110px) {
-                        justify-content: space-around;
-                }
-
-                @media screen and (max-width: 940px) {
+                @media screen and (max-width: 990px) {
                         @include mediaFlexContent();
                 }
         }
 
         &__img {
-                box-shadow: 0px 0px 30px 0px rgba(20, 20, 21, 0.13);
+                width: 50%;
+                display: flex;
+                justify-content: center;
+
+                & img {
+                        box-shadow: 0px 0px 30px 0px rgba(20, 20, 21, 0.13);
+
+                        @media screen and (max-width: 700px) {
+                                width: 80%;
+                        }
+                }
 
                 @media screen and (max-width: 940px) {
                         margin-bottom: 20px;
@@ -350,7 +270,6 @@ $bgColorContacts: rgba(2, 22, 35, 0.71);
         &__content {
                 @include flexContent();
                 gap: 15px;
-                padding: 0 15px;
 
                 @media screen and (max-width: 450px) {
                         & img {
@@ -416,18 +335,23 @@ $bgColorContacts: rgba(2, 22, 35, 0.71);
                 position: relative;
                 width: 370px;
                 height: 440px;
-
+                
                 @media screen and (max-width: 450px) {
-                        width: 80%;
-
+                                width: 270px;
+                                height: 340px;
                 }
 
                 & img {
                         position: absolute;
+
+                        @media screen and (max-width: 450px) {
+                                        width: 270px;
+                                        height: 340px;
+                                }
                 }
 
                 &:hover {
-                        .team__about {
+                        .team__info {
                                 position: relative;
                                 opacity: 1;
 
@@ -438,10 +362,10 @@ $bgColorContacts: rgba(2, 22, 35, 0.71);
                 }
         }
 
-        &__about {
+        &__info {
                 position: relative;
-                width: 91%;
-                height: 55%;
+                width: 335px;
+                height: 240px;
                 margin-top: 166px;
                 margin-left: 18px;
                 padding: 43px 60px 43px 39px;
@@ -456,78 +380,83 @@ $bgColorContacts: rgba(2, 22, 35, 0.71);
                         border: 20px solid transparent;
                         border-bottom: 35px solid #6ff6eb;
                         opacity: 0;
-                        transition: all 0.3s linear;
                 }
 
-
-                &--title {
-                        font-size: 20px;
-                        font-family: "Merriweather";
-                        color: rgba(39, 39, 39, 0.949);
-                        font-weight: bold;
-                        line-height: 1.2;
-                        text-align: center;
-                        margin-bottom: 27px;
-
-                        @media screen and (max-width: 450px) {
-                                font-size: 17px;
-                        }
+                 @media screen and (max-width: 450px) {
+                        width: 240px;
+                        height: 170px;
+                        padding-top: 25px;
+                        margin-top: 150px;
                 }
+        }
 
-                &--text {
-                        font-size: 16px;
-                        font-family: "Raleway";
-                        color: rgba(0, 0, 0, 0.8);
-                        line-height: 1.5;
-                        text-align: left;
-                        margin-bottom: 42px;
-
-                        @media screen and (max-width: 450px) {
-                                font-size: 13px;
-                                margin-bottom: 20px;        
-                        }
-                }
-
-                &--icons {
-                        display: flex;
-                        justify-content: start;
-                        gap: 17px;
-
-                        @media screen and (max-width: 450px) {
-                                justify-content: center;
-                        }
-
-                }
+        &__name {
+                @include merriweatherTitle(20px);
+                color: rgba(39, 39, 39, 0.949);
+                line-height: 1.2;
+                margin-bottom: 27px;
 
                 &--decorated {
                         font-size: 15px;
-                        font-family: "Merriweather";
+                        font-family: "Merriweather", serif;
                         font-style: italic;
                         opacity: 0.5;
                 }
 
-                &--link {
+                @media screen and (max-width: 450px) {
+                        font-size: 10px;
+                }
+        }
+
+        &__text {
+                font-size: 16px;
+                font-family: "Raleway", sans-serif;
+                color: rgba(0, 0, 0, 0.8);
+                line-height: 1.5;
+                text-align: left;
+                margin-bottom: 36px;
+
+                @media screen and (max-width: 450px) {
+                        font-size: 9px;
+                        margin-bottom: 20px;        
+                }
+        }
+
+        &__icons {
+                display: flex;
+                justify-content: start;
+                gap: 17px;
+
+                @media screen and (max-width: 450px) {
+                        justify-content: center;
+                }
+
+        }
+
+        &__link {
+                & i {
                         font-size: 15px;
                         font-family: "FontAwesome";
                         color: rgb(0, 0, 0);
 
-                        & a:hover {
+                        &:hover {
                                 transform: scale(1.2);
                                 color: rgba(0, 0, 0, 0.5);
                         }
 
                         @media screen and (max-width: 450px) {
-                                font-size: 10px;
+                                font-size: 12px;
                         }
                 }
 
         }
+
 }
 
+
 .contacts {
-        background-image: url("../img/contac_bg.png");
-        background-size: 100% auto;
-        opacity: 1;
+        background: linear-gradient(45deg, rgba(248, 250, 251, 0.7), rgba(248, 250, 251, 0.3)), url(../img/christmas_snow_trees-wide.png);
+        background-size: cover;
 
         &__container {
                 padding-top: 120px;
@@ -567,7 +496,7 @@ $bgColorContacts: rgba(2, 22, 35, 0.71);
                          &::placeholder {
                                 color: #bbc0c4;
                                 font-size: 15px;
-                                font-family: "Raleway";
+                                font-family: "Raleway", sans-serif;
                          }
                 }
 
@@ -609,7 +538,7 @@ $bgColorContacts: rgba(2, 22, 35, 0.71);
                 text-transform: uppercase;
                 text-decoration: none;
                 letter-spacing: 2px;
-                margin: 25px 0 0 1px;
+                margin-top: 25px;
 
                  @media screen and (max-width: 900px) {
                         align-self: center;
@@ -621,20 +550,29 @@ $bgColorContacts: rgba(2, 22, 35, 0.71);
                 }
         }
         
-        &__info--item {
+        &__info {
                 font-size: 15px;
-                font-family: "Raleway";
+                font-family: "Raleway", sans-serif;
                 color: rgba(255, 255, 255, 0.702);
                 line-height: 1.5rem;
         }
 
-        &__email, & a {
+        &__info-item {
+                @media screen and (max-width: 430px) {
+                        font-size: 12px;
+                }
+        }
+
+        &__email-item, a {
                 margin-top: 25px;
-                font-size: 15px;
-                font-family: "Raleway";
                 color: rgba(255, 255, 255, 0.702);
-                line-height: 1.5rem;
-        
+                font-size: 15px;
+                font-family: "Raleway", sans-serif;
+
+                @media screen and (max-width: 430px) {
+                      font-size: 12px;
+                }
+
                 & a:hover {
                         color: rgba(255, 255, 255, 0.9);
                         transform: scale(1.05);
@@ -651,7 +589,7 @@ $bgColorContacts: rgba(2, 22, 35, 0.71);
         }
         &__title {
                 font-size: 16px;
-                font-family: "Raleway";
+                font-family: "Raleway", sans-serif;
                 color: rgba(255, 255, 255, 0.8);
                 margin-bottom: 19px;
                 text-align: center;
@@ -677,10 +615,10 @@ $bgColorContacts: rgba(2, 22, 35, 0.71);
                 width: 46px;
                 height: 40px;
                 text-align: center;
+                cursor: pointer;
                 &:hover {
                         background-color: #6eeee4;
                         color: #070e0d;
-                        transform: scale(1.03);
                         transition: 0.2s;
                         opacity: 1;
                 }
@@ -713,19 +651,37 @@ $bgColorContacts: rgba(2, 22, 35, 0.71);
         overflow: auto;
         background-color: rgb(0, 0, 0);
         background-color: rgba(0, 0, 0, 0.9);
-}
 
-.modal-content {
-        margin: auto;
-        display: block;
-        width: 40%;
-        animation-name: zoom;
-        animation-duration: 0.6s;
+        &__content {
+                margin: auto;
+                display: block;
+                width: 40%;
+                align-self: center;
+                animation-name: zoom;
+                animation-duration: 0.6s;
 
-        @media only screen and (max-width: 700px) {
-                width: 100%;
+                @media only screen and (max-width: 700px) {
+                        width: 60%;
+                }
+        }
+
+        &__close {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+                &:hover {
+                        color: #bbb;
+                        text-decoration: none;
+                        cursor: pointer;
+                }
         }
 }
+
+
 
 @keyframes zoom {
         from {
@@ -737,17 +693,3 @@ $bgColorContacts: rgba(2, 22, 35, 0.71);
         }
 }
 
-.close {
-        position: absolute;
-        top: 15px;
-        right: 35px;
-        color: #f1f1f1;
-        font-size: 40px;
-        font-weight: bold;
-        transition: 0.3s;
-        &:hover {
-                color: #bbb;
-                text-decoration: none;
-                cursor: pointer;
-        }
-}
