@@ -728,14 +728,13 @@ a:hover {
 }
 
 .contacts__content {
-  padding: 0px 15px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 25px;
 }
 
@@ -762,6 +761,12 @@ a:hover {
 @media screen and (max-width: 900px) {
   .contacts__message {
     width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contacts__message {
+    width: 100%;
   }
 }
 
@@ -826,6 +831,12 @@ a:hover {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .contacts__map {
+    width: 100%;
+  }
+}
+
 .contacts__form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -880,8 +891,11 @@ a:hover {
   }
 }
 
-.contacts__email-item, .contacts a {
+.contacts__email {
   margin-top: 25px;
+}
+
+.contacts__email-item, .contacts a {
   color: rgba(255, 255, 255, 0.702);
   font-size: 15px;
   font-family: "Raleway", sans-serif;

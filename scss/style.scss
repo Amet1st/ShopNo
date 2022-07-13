@@ -464,10 +464,9 @@
         }
 
         &__content {
-                padding: 0px 15px;
                 width: 100%;
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 gap: 25px;
 
                 @media screen and (max-width: 900px) {
@@ -483,6 +482,10 @@
 
                 @media screen and (max-width: 900px) {
                         width: 70%;
+                }
+
+                 @media screen and (max-width: 500px) {
+                        width: 100%;
                 }
 
                 & input, textarea {
@@ -517,6 +520,10 @@
 
                 @media screen and (max-width: 900px) {
                         width: 70%;
+                }
+
+                @media screen and (max-width: 500px) {
+                        width: 100%;
                 }
         }
 
@@ -563,8 +570,11 @@
                 }
         }
 
-        &__email-item, a {
+        &__email {
                 margin-top: 25px;
+        }
+
+        &__email-item, a {
                 color: rgba(255, 255, 255, 0.702);
                 font-size: 15px;
                 font-family: "Raleway", sans-serif;
